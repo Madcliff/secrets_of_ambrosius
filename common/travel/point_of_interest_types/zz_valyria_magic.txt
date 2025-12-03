@@ -14,7 +14,7 @@
 			add_to_list = provinces
 		}
 		while = { 
-			count = 25
+			count = 45
 			random_province = { 
 				limit = { 
 					NOT = { is_in_list = provinces }
@@ -85,7 +85,7 @@ poi_valyria_magic_volcano = {
 			add_to_list = provinces
 		}
 		while = { 
-			count = 10
+			count = 15
 			random_province = { 
 				limit = { 
 					NOT = { is_in_list = provinces }

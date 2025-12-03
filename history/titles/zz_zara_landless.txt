@@ -16,6 +16,7 @@ d_laamp_Merlin_A = {
 				}
 			}
 			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
 			destroy_landless_title_no_dlc_effect = { DATE = 1.1.1  }
 		}
 	}

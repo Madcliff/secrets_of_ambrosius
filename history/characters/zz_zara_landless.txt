@@ -290,7 +290,7 @@ Dummy_Merlin_09 = {
 	culture = "roman"
 	1.1.1 = {
 		birth = "1.1.1"
-		add_character_flag = has_scripted_appearance
+		add_character_flag = has_scripted_appearancer
 	}
 	20.1.2 = { death = "20.1.2" }
 	portrait_override = {	
