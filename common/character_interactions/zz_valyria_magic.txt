@@ -121,8 +121,6 @@ zz_gift_artifact_interaction = {
 		}
 
 		#AGOT Added, no non-human interactions
-		scope:actor = { is_human = yes }
-		scope:recipient = { is_human = yes }
 	}
 
 	is_valid_showing_failures_only = {
