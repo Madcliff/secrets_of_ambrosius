@@ -1,0 +1,485 @@
+﻿zz_valyria_magic_education.0009 = {
+	type = activity_event
+	title = zz_valyria_magic_education.0009.t
+	desc = {
+		desc = zz_valyria_magic_education.0009.desc
+
+	}
+	theme = university
+	override_background = {
+		reference = zz_magical_eduction
+	}
+
+	center_portrait = {
+		character = root
+		animation = thinking
+	}
+
+
+	immediate = {
+		#Reward effects
+		
+		
+		scope:activity = {
+		}
+	}
+	## Any Study, Increase Skill 
+	option = {
+		name = zz_valyria_magic_education.0009.a
+		trigger = {
+			OR = {
+				has_character_flag = perfect_reward
+				has_character_flag = high_reward
+			}
+		}
+		switch = {
+			trigger = has_character_flag
+			study_valyrian_secrets = { 
+				zz_valyria_gain_spell_experience = {
+					XPGAIN = 3 
+					XPTRACK = secrets_of_the_higher_mysteries
+				}
+			}
+			study_blood_magic = { 
+				zz_valyria_gain_spell_experience = {
+					XPGAIN = 3 
+					XPTRACK = blood_magic
+				}
+			}
+			study_shadow_magic = {
+				zz_valyria_gain_spell_experience = {
+					XPGAIN = 3 
+					XPTRACK = shadow_magic
+				}
+			}
+			study_dream_magic = {
+				zz_valyria_gain_spell_experience = {
+					XPGAIN = 3 
+					XPTRACK = dream_magic
+				}
+			}
+			study_alchemy_magic = {
+				zz_valyria_gain_spell_experience = {
+					XPGAIN = 3 
+					XPTRACK = alchemy_magic
+				}
+			}
+			study_fire_magic ={
+				zz_valyria_gain_spell_experience = {
+					XPGAIN = 3 
+					XPTRACK = fire_magic
+				}
+			}
+			study_air_magic = {
+				zz_valyria_gain_spell_experience = {
+					XPGAIN = 3 
+					XPTRACK = air_magic
+				}
+			}
+			study_water_magic = {
+				zz_valyria_gain_spell_experience = {
+					XPGAIN = 3
+					XPTRACK = water_magic
+				}
+			}
+		}
+	}
+	## Valyrian Studies, Random Spell 
+	option = {
+		name = zz_valyria_magic_education.0009.b 
+		trigger = {
+			OR = {
+				has_character_flag = perfect_reward
+				has_character_flag = high_reward
+			}
+			has_character_flag  = study_valyrian_secrets
+		}
+		zz_random_gain_magic_spell = yes
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.blood_magic
+		trigger = {
+			OR = {
+				has_character_flag = perfect_reward
+				has_character_flag = high_reward
+			}
+			has_character_flag = study_blood_magic
+		}
+		trigger_event = zz_valyria_magic_education.00091
+	}
+
+	option = {
+		name = zz_valyria_magic_education.0009.shadow_magic
+		trigger = {
+			OR = {
+				has_character_flag = perfect_reward
+				has_character_flag = high_reward
+			}
+			has_character_flag = study_shadow_magic
+		}
+		trigger_event = zz_valyria_magic_education.00092
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.dream_magic
+		trigger = {
+			OR = {
+				has_character_flag = perfect_reward
+				has_character_flag = high_reward
+			}
+			has_character_flag = study_dream_magic
+		}
+		trigger_event = zz_valyria_magic_education.00093
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.alchemy_magic
+		trigger = {
+			OR = {
+				has_character_flag = perfect_reward
+				has_character_flag = high_reward
+			}
+			has_character_flag = study_alchemy_magic
+		}
+		trigger_event = zz_valyria_magic_education.00094
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.fire_magic
+		trigger = {
+			OR = {
+				has_character_flag = perfect_reward
+				has_character_flag = high_reward
+			}
+			has_character_flag = study_fire_magic
+		}
+		trigger_event = zz_valyria_magic_education.00095
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.air_magic
+		trigger = {
+			OR = {
+				has_character_flag = perfect_reward
+				has_character_flag = high_reward
+			}
+			has_character_flag = study_air_magic
+		}
+		trigger_event = zz_valyria_magic_education.00096
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.water_magic
+		trigger = {
+			OR = {
+				has_character_flag = perfect_reward
+				has_character_flag = high_reward
+			}
+			has_character_flag = study_water_magic
+		}
+		trigger_event = zz_valyria_magic_education.00097
+	}
+	
+	## Shadow Magic 
+
+	## Dream Magic 
+
+
+	## Alchemy Magic 
+
+
+	
+	## Fire Magic
+		
+	## Water Magic
+	
+
+	
+	## Air Magic
+	
+
+	## No Choice
+	option = {
+		trigger = {
+		}
+		name = zz_valyria_magic_education.0009.zz
+		ai_chance = {
+			base = 100
+		}
+	}
+	after = { 
+		remove_character_flag = perfect_reward
+		remove_character_flag = high_reward
+		remove_character_flag = ok_reward
+		remove_character_flag = study_valyrian_secrets
+		remove_character_flag = study_blood_magic
+		remove_character_flag = study_shadow_magic
+		remove_character_flag = study_dream_magic
+		remove_character_flag = study_alchemy_magic
+		remove_character_flag = study_fire_magic
+		remove_character_flag = study_water_magic
+		remove_character_flag = study_air_magic
+	}
+}
+
+# Blood Magic Education - All Mysteries
+zz_valyria_magic_education.00091 = {
+	type = character_event
+	window = zz_valyria_magic_character_event
+	title = zz_valyria_magic_education.0009.t
+	desc = {
+		desc = zz_valyria_magic_education.0009.desc
+	}
+	theme = university
+	override_background = {
+		reference = zz_magical_eduction
+	}
+
+	center_portrait = {
+		character = root
+		animation = thinking
+	}
+
+
+	immediate = {
+		zz_valyria_magic_learn_list = {MAGIC_SCHOOL = blood_magic}
+	}
+
+	widget = {
+		is_shown = {
+			is_ai = no
+		}
+		gui = "event_window_flag_selection"
+		container = "custom_widgets_container"
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.a
+		zz_valyria_magic_learn_effect = {MAGIC_SCHOOL = blood_magic}
+	}
+
+	
+}
+
+# Shadow Magic Education - All Mysteries
+zz_valyria_magic_education.00092 = {
+	type = character_event
+	window = zz_valyria_magic_character_event
+	title = zz_valyria_magic_education.0009.t
+	desc = {
+		desc = zz_valyria_magic_education.0009.desc
+	}
+	theme = university
+	override_background = {
+		reference = zz_magical_eduction
+	}
+
+	center_portrait = {
+		character = root
+		animation = thinking
+	}
+
+
+	immediate = {
+		zz_valyria_magic_learn_list_17 = {MAGIC_SCHOOL = shadow_magic}
+	}
+
+	widget = {
+		is_shown = {
+			is_ai = no
+		}
+		gui = "event_window_flag_selection"
+		container = "custom_widgets_container"
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.a
+		trigger = {
+		}
+		zz_valyria_magic_learn_effect_17 = {MAGIC_SCHOOL = shadow_magic}
+	}
+}
+
+# Dream Magic Education - All Mysteries
+zz_valyria_magic_education.00093 = {
+	type = character_event
+	window = zz_valyria_magic_character_event
+	title = zz_valyria_magic_education.0009.t
+	desc = {
+		desc = zz_valyria_magic_education.0009.desc
+	}
+	theme = university
+	override_background = {
+		reference = zz_magical_eduction
+	}
+
+	center_portrait = {
+		character = root
+		animation = thinking
+	}
+
+
+	immediate = {
+		zz_valyria_magic_learn_list_49 = {MAGIC_SCHOOL = dream_magic}
+	}
+
+	widget = {
+		is_shown = {
+			is_ai = no
+		}
+		gui = "event_window_flag_selection"
+		container = "custom_widgets_container"
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.a
+		trigger = {
+		}
+		zz_valyria_magic_learn_effect_49 = {MAGIC_SCHOOL = dream_magic}
+	}
+	
+}
+
+# Alchemy Magic Education - All Mysteries
+zz_valyria_magic_education.00094 = {
+	type = character_event
+	window = zz_valyria_magic_character_event
+	title = zz_valyria_magic_education.0009.t
+	desc = {
+		desc = zz_valyria_magic_education.0009.desc
+	}
+	theme = university
+	override_background = {
+		reference = zz_magical_eduction
+	}
+
+	center_portrait = {
+		character = root
+		animation = thinking
+	}
+
+
+	immediate = {
+		zz_valyria_magic_learn_list_17 = {MAGIC_SCHOOL = alchemy_magic}
+	}
+
+	widget = {
+		is_shown = {
+			is_ai = no
+		}
+		gui = "event_window_flag_selection"
+		container = "custom_widgets_container"
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.a
+		trigger = {
+		}
+		zz_valyria_magic_learn_effect_17 = {MAGIC_SCHOOL = alchemy_magic }
+	}
+}
+
+# Fire Magic Education - All Mysteries
+zz_valyria_magic_education.00095 = {
+	type = character_event
+	window = zz_valyria_magic_character_event
+	title = zz_valyria_magic_education.0009.t
+	desc = {
+		desc = zz_valyria_magic_education.0009.desc
+	}
+	theme = university
+	override_background = {
+		reference = zz_magical_eduction
+	}
+
+	center_portrait = {
+		character = root
+		animation = thinking
+	}
+
+
+	immediate = {
+		zz_valyria_magic_learn_list_17 = {MAGIC_SCHOOL = fire_magic}
+	}
+
+	widget = {
+		is_shown = {
+			is_ai = no
+		}
+		gui = "event_window_flag_selection"
+		container = "custom_widgets_container"
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.a
+		trigger = {
+		}
+		zz_valyria_magic_learn_effect_17 = {MAGIC_SCHOOL = fire_magic }
+	}
+}
+
+# Air Magic Education - All Mysteries
+zz_valyria_magic_education.00096 = {
+	type = character_event
+	window = zz_valyria_magic_character_event
+	title = zz_valyria_magic_education.0009.t
+	desc = {
+		desc = zz_valyria_magic_education.0009.desc
+	}
+	theme = university
+	override_background = {
+		reference = zz_magical_eduction
+	}
+
+	center_portrait = {
+		character = root
+		animation = thinking
+	}
+
+
+	immediate = {
+		zz_valyria_magic_learn_list_17 = {MAGIC_SCHOOL = air_magic}
+	}
+
+	widget = {
+		is_shown = {
+			is_ai = no
+		}
+		gui = "event_window_flag_selection"
+		container = "custom_widgets_container"
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.a
+		trigger = {
+		}
+		zz_valyria_magic_learn_effect_17 = {MAGIC_SCHOOL = air_magic }
+	}
+}
+
+# Water Magic Education - All Mysteries
+zz_valyria_magic_education.00097 = {
+	type = character_event
+	window = zz_valyria_magic_character_event
+	title = zz_valyria_magic_education.0009.t
+	desc = {
+		desc = zz_valyria_magic_education.0009.desc
+	}
+	theme = university
+	override_background = {
+		reference = zz_magical_eduction
+	}
+
+	center_portrait = {
+		character = root
+		animation = thinking
+	}
+
+
+	immediate = {
+		zz_valyria_magic_learn_list_17 = {MAGIC_SCHOOL = water_magic}
+	}
+
+	widget = {
+		is_shown = {
+			is_ai = no
+		}
+		gui = "event_window_flag_selection"
+		container = "custom_widgets_container"
+	}
+	option = {
+		name = zz_valyria_magic_education.0009.a
+		trigger = {
+		}
+		zz_valyria_magic_learn_effect_17 = {MAGIC_SCHOOL = water_magic }
+	}
+}

@@ -95,22 +95,42 @@ poi_valyria_magic_volcano = {
 		}
 	}
 	on_visit = {
-		send_interface_toast = {
-			title = poi_valyria_magic_volcano.visit
-			left_icon = root
-			custom_tooltip = poi_valyria_magic_volcano.effect
-			add_trait_xp = { 
-				trait = starwalker 
-				track = chosen_of_the_heavens
-				value = 3
+		if = {
+			limit = {
+				OR = {
+					has_inactive_trait = starwalker
+					has_trait = starwalker
+				}
 			}
-			root.location = {
-				save_scope_as = doom_location
+			send_interface_toast = {
+				title = poi_valyria_magic_volcano.visit
+				left_icon = root
+				custom_tooltip = poi_valyria_magic_volcano.effect
+				add_trait_xp = { 
+					trait = starwalker 
+					track = chosen_of_the_heavens
+					value = {
+						integer_range = {
+							min = 3
+							max = 7
+						}
+					}
+				}
+				root.location = {
+					save_scope_as = doom_location
+				}
+				add_character_flag = dragon_training
+				trigger_event = {
+					id = zz_valyria_the_doom.001
+					days = 1
+				}
 			}
-			add_character_flag = dragon_training
-			trigger_event = {
-				id = zz_valyria_the_doom.001
-				days = 1
+		}
+		else = {
+			send_interface_toast = {
+				title = poi_valyria_magic_volcano.visit
+				left_icon = root
+				custom_tooltip = poi_valyria_magic_volcano.noeffect
 			}
 		}
 	}
