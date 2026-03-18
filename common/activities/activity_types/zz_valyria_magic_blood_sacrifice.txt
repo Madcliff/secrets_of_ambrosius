@@ -223,7 +223,7 @@
 				faith = {	
 					OR = {
 						has_doctrine_parameter = witchcraft_accepted
-						has_doctrine = doctrine_witchcraft_virtuous
+						has_doctrine_parameter = execute_prisoner_to_improve_artifact
 					}
 				}
 				NOT = { has_trait = cynical }
@@ -235,7 +235,7 @@
 				faith = {	
 					OR = {
 						has_doctrine_parameter = witchcraft_accepted
-						has_doctrine = doctrine_witchcraft_virtuous
+						has_doctrine_parameter = execute_prisoner_to_improve_artifact
 					}
 				}
 				has_trait = zealous
@@ -247,7 +247,7 @@
 				faith = {	
 					NOR = {
 						has_doctrine_parameter = witchcraft_accepted
-						has_doctrine = doctrine_witchcraft_virtuous
+						has_doctrine_parameter = execute_prisoner_to_improve_artifact
 					}
 				}
 				has_trait = zealous
